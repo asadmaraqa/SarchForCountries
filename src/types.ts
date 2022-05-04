@@ -1,61 +1,27 @@
 // Action types
-export const ADD_PRODUCT = 'ADD_PRODUCT'
-export const REMOVE_PRODUCT = 'REMOVE_PRODUCT'
-export const TOGGLE_DIALOG = 'TOGGLE_DIALOG'
+export const FETCH_LOADING = 'FETCH_LOADING'
+export const FETCH_SUCCESS = 'FETCH_SUCCESS'
+export const FETCH_FAILED = 'FETCH_FAILED'
 
-// Enum
-export enum DialogType {
-  SignIn = 'signIn',
-  SignUp = 'signUp',
+export type AppState = {
+  country: CountryinitState
 }
 
 // A product
-export type Product = {
-  id: string
-  name: string
-  price: number
+export type CountryinitState = {
+  countries: []
+  isLoading: boolean
+  error: string
 }
 
-export type AddProductAction = {
-  type: typeof ADD_PRODUCT
-  payload: {
-    product: Product,
-  }
+export type FetchLoadingAction = {
+  type: typeof FETCH_LOADING
 }
-
-export type RemoveProductAction = {
-  type: typeof REMOVE_PRODUCT
-  payload: {
-    product: Product,
-  }
+export type FetchSuccessAction = {
+  type: typeof FETCH_SUCCESS
+  payload: []
 }
-
-export type ToggleDialogAction = {
-  type: typeof TOGGLE_DIALOG
-  payload: {
-    dialog: DialogType,
-  }
-}
-
-export type UiActions = ToggleDialogAction
-
-// Use this union in reducer
-export type ProductActions =
-  | AddProductAction
-  | RemoveProductAction
-
-export type ProductState = {
-  inCart: Product[]
-}
-
-// Using dynamic keys from an enum
-export type UiState = {
-  dialogOpen: {
-    [key in DialogType]?: boolean
-  }
-}
-
-export type AppState = {
-  product: ProductState,
-  ui: UiState,
+export type FetchFailedAction = {
+  type: typeof FETCH_FAILED
+  payload: string
 }

@@ -1,0 +1,13 @@
+
+.countryCard{
+
+ display: flex;
+ flex-wrap: wrap;
+
+&__container{
+ flex-grow: 1;
+    width: 33%;
+    padding: 20px;
+    text-align: center;
+}
+}
