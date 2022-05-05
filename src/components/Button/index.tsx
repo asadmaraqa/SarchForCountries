@@ -1,13 +1,12 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const Button = () => {
-  return (
-    <button>
-      <FontAwesomeIcon icon={faSearch} />
-    </button>
-  )
+import '../../sass/_main.scss'
+
+type buttonProps = {
+  title: string
+}
+const Button = ({ title }: buttonProps) => {
+  return <button className="button">{title}</button>
 }
 
 export default Button

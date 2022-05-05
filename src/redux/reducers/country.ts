@@ -3,6 +3,9 @@ import {
   FETCH_LOADING,
   FETCH_FAILED,
   FETCH_SUCCESS,
+  FetchLoadingAction,
+  FetchSuccessAction,
+  FetchFailedAction,
 } from '../../types'
 
 const initState: CountryinitState = {
@@ -11,7 +14,10 @@ const initState: CountryinitState = {
   error: '',
 }
 
-export default function country(state = initState, action: any) {
+export default function country(
+  state = initState,
+  action: FetchLoadingAction | FetchSuccessAction | FetchFailedAction
+) {
   switch (action.type) {
   case FETCH_LOADING:
     return {

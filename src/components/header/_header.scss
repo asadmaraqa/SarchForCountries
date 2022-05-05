@@ -1,36 +1,44 @@
-.header {
- display: flex;
- grid-template-areas: "logo menu";
- justify-content: space-between;
- grid-area: header;
- background-color: rgb(230, 230, 255);
- padding: 20px;
+@use "../../sass/variables";
 
- &__icon-menu{
-  flex-grow: 1;
-  color:black;
-  padding-right: 20px;
- }
- &__icon-menu:hover{
-  color: yellowgreen;
- }
- &__icon-heart{
-  color: red;
- }
- &__icon-heart:hover{
-  color: yellowgreen;
- }
- &__menu{
-  position:absolute;
-  background-color: white;
-  list-style: none;
-  height: 100%;
-  width: 10%;
-  top: 60px;
+.header {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 1fr min-content;
+  justify-content: space-between;
+  background-color: variables.$primaryColor;
   padding: 20px;
-  
-  li{
-   padding: 20px;
+  box-shadow: 1px 1px 2px 1px #888888;
+
+
+
+  &__icon-menu {
+    flex-grow: 1;
+    color: black;
+    padding-right: 20px;
   }
- }
+
+  &__icon-menu:hover {
+    color: yellowgreen;
+  }
+
+  &__icon-heart {
+    color: red;
+  }
+
+  &__icon-heart:hover {
+    color: yellowgreen;
+  }
+
+  &__menu {
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    height: 100%;
+    top: 60px;
+    padding: 20px;
+
+    li {
+      padding: 20px;
+    }
+  }
+
 }

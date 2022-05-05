@@ -1,0 +1,20 @@
+@use "../../sass/variables";
+
+.button {
+  background-color: variables.$primaryColor;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  width: 60%;
+  cursor: pointer;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 20px;
+  align-items: center;
+
+  &:hover {
+    background-color: variables.$accentColor;
+  }
+}

@@ -1,3 +1,4 @@
+@use "./variables";
 * {
   padding: 0;
   margin: 0;
@@ -9,21 +10,24 @@
 html {
   scroll-behavior: smooth;
 }
+:root{
+  --primary-color:#adadee;
+  --accent-color:#1D95C9;
+  --background-color:#ebebeb;
+}
 
 .home{
   justify-content: center;
   margin: auto;
   display: grid;
   grid-template-columns: 90vw;
-  grid-template-rows: 2fr 80vh 0.5fr min-content;
+  grid-template-rows: min-content 1fr;
   grid-template-areas:
     "header"
-    "hero"
-    "countries"
-    "footer";
+    "countries";
   gap: 3rem;
   box-sizing: border-box;
-  background-color: rgb(235, 235, 235);
+  background-color: variables.$backgroundColor;
 }
 a {
   text-decoration: none;
@@ -32,9 +36,11 @@ a {
 
 li {
   list-style: none;
+
 }
 button {
   border: none;
   outline: none;
-  background: none; 
+  background-color: transparent;
+  cursor: pointer;
 }

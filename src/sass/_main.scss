@@ -1,4 +1,7 @@
 @use "./base";
+@use "./variables";
 @use "../components/header/header";
 @use "../components/SearchBar/SearchBar";
-@use "../components/countryCard/CountryCard.scss"
+@use "../components/countriesCard/_countriesCard";
+@use "../components/button/Button";
+@use "../../src/components/countriesCard/card/card";
