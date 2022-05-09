@@ -1,29 +1,26 @@
 import React from 'react'
-import { CardData } from '../../../types'
-import Button from '../../button'
 
-const Card = ({ name, flag, region, population, languages }: CardData) => {
+import { CardData } from '../../../globalTypes'
+import Button from '../../button'
+import { numberWithSpaces } from '../../../helper/numberWithSpaces'
+
+const Card = ({ name, flags, region, population, languages }: CardData) => {
   return (
     <>
-      <div className="card" key={name}>
+      <div className="card" key={name.common}>
         <div>
-          <img src={flag} alt="" className="card__image" />
-          <h2 className="card__name">{name}</h2>
+          <img src={flags.png} alt="" className="card__image" />
+          <h2 className="card__name">{name.common}</h2>
           <Button title={'LIKE'} />
         </div>
-
         <div className="card_content">
-          <p className="card__language">
-            <h3>Region:</h3>
-            {region}
-          </p>
-          <p>
-            {' '}
-            <h3>Population:</h3> {population}
-          </p>
+          <h3 className="card__language">Region: </h3>
+          <p>{region}</p>
+          <h3>Population:</h3>
+          <p>{numberWithSpaces(population)}</p>
           <h3>Languages</h3>
           {languages &&
-            Object.values(languages).map((lang: any) => (
+            Object.values(languages).map((lang: string) => (
               <ul key={lang}>
                 <li>{lang}</li>
               </ul>

@@ -1,13 +1,14 @@
 import { Dispatch } from 'redux'
 import axios from 'axios'
+
 import {
-  FetchLoadingAction,
   FetchFailedAction,
+  FetchLoadingAction,
   FetchSuccessAction,
-  FETCH_LOADING,
   FETCH_FAILED,
+  FETCH_LOADING,
   FETCH_SUCCESS,
-} from '../../types'
+} from '../../globalTypes'
 
 export function fetchLoading(): FetchLoadingAction {
   return {

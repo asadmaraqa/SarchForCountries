@@ -1,8 +1,12 @@
 import React from 'react'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
+import { useTheme } from '../../../context/theme/themeContext'
 
 const SwitchTheme = ({ onClick }: any) => {
+  const { setCurrentTheme } = useTheme()
+
   return (
     <div className="header__menu">
       <button onClick={onClick}>
@@ -10,16 +14,16 @@ const SwitchTheme = ({ onClick }: any) => {
       </button>
       <ul>
         <li>
-          <button>blue</button>
+          <button onClick={() => setCurrentTheme('blue')}>blue</button>
         </li>
         <li>
-          <button>RED</button>
+          <button onClick={() => setCurrentTheme('red')}>RED</button>
         </li>
         <li>
-          <button>Green</button>
+          <button onClick={() => setCurrentTheme('green')}>Green</button>
         </li>
         <li>
-          <button>Original</button>
+          <button onClick={() => setCurrentTheme('original')}>Original</button>
         </li>
       </ul>
     </div>

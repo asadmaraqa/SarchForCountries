@@ -27,7 +27,7 @@ html {
     "countries";
   gap: 3rem;
   box-sizing: border-box;
-  background-color: variables.$backgroundColor;
+  background-color: var(--background);
 }
 a {
   text-decoration: none;

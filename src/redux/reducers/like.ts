@@ -6,7 +6,7 @@ import {
   LikeinitState,
   RemoveCountryAction,
   RREMOVE_COUNTRY,
-} from '../../types'
+} from '../../globalTypes'
 let initialLike: [] = []
 const initState: LikeinitState = {
   like: initialLike,

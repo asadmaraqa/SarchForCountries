@@ -10,8 +10,8 @@ export type AppState = {
 }
 
 export type CardData = {
-  name: string
-  flag: string
+  name: { common: string }
+  flags: { png: string }
   region: string
   population: string
   languages: []

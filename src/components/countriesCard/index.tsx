@@ -1,17 +1,32 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { AppState } from '../../types'
 
 import { fetchCountriesApi } from '../../redux/actions'
 import Card from './card'
-import { numberWithSpaces } from '../../helper/numberWithSpaces'
+import SearchContext from '../../context/search/searchContext'
+import { AppState, CardData } from '../../globalTypes'
 
 const CountriesCard = () => {
   const loading = useSelector((state: AppState) => state.country.isLoading)
   const countries = useSelector((state: AppState) => state.country.countries)
+
+  const [searchedCountries, setSearchedCountries] = useState(countries)
+  const { input } = useContext(SearchContext)
+
+  useEffect(() => {
+    setSearchedCountries(countries)
+  }, [countries])
+
+  useEffect(() => {
+    const search_resualt: [] = countries.filter((country: CardData) =>
+      country.name.common.toLowerCase().includes(input?.toLowerCase())
+    ) as []
+
+    setSearchedCountries(search_resualt)
+  }, [input, countries])
   const dispatch = useDispatch()
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(fetchCountriesApi())
   }, [dispatch])
 
@@ -19,14 +34,8 @@ const CountriesCard = () => {
     <section className="countryCard">
       {loading && <h1>Loading please wait ....</h1>}
       {!loading &&
-        countries.map((country: any) => (
-          <Card
-            name={country.name.common}
-            flag={country.flags.png}
-            region={country.region}
-            languages={country.languages}
-            population={numberWithSpaces(country.population)}
-          />
+        searchedCountries.map((country: CardData) => (
+          <Card {...country} key={country.name.common} />
         ))}
     </section>
   )

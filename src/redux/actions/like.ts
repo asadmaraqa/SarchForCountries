@@ -5,7 +5,7 @@ import {
   ADD_COUNTRY,
   RemoveCountryAction,
   RREMOVE_COUNTRY,
-} from '../../types'
+} from '../../globalTypes'
 
 export function addCountry(country: object): AddCountryAction {
   return {

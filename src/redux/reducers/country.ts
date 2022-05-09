@@ -6,7 +6,7 @@ import {
   FetchLoadingAction,
   FetchSuccessAction,
   FetchFailedAction,
-} from '../../types'
+} from '../../globalTypes'
 
 const initState: CountryinitState = {
   countries: [],
