@@ -12,7 +12,7 @@ const SearchBar = () => {
     <div className="searchBar">
       <input
         type="text"
-        placeholder="search countires"
+        placeholder="search countries"
         value={input}
         onChange={(e) => {
           setInput(e.target.value)

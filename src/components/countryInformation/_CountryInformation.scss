@@ -1,10 +1,11 @@
-.card {
+.CountryInformation {
   flex-grow: 1;
   padding: 20px;
   text-align: center;
-  width: 300px;
+  width: 50vw;
   background-color: antiquewhite;
   margin: 20px;
+  justify-items: center;
   box-shadow: 1px 1px 2px 1px #888888;
   display: grid;
   grid-template-columns: 0.8fr 1fr;
@@ -14,14 +15,4 @@
     "flag content"
     "flag content"
     "flag content";
-
-  &__image {
-    grid: flag;
-    width: 100%;
-    align-self: center;
-  }
-
-  &__content {
-    grid: content
-  }
 }

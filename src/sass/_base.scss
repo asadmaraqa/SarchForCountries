@@ -16,8 +16,9 @@ html {
   --background-color:#ebebeb;
 }
 
-.home{
+.page{
   justify-content: center;
+  justify-items: center;
   margin: auto;
   display: grid;
   grid-template-columns: 90vw;
@@ -26,6 +27,7 @@ html {
     "header"
     "countries";
   gap: 3rem;
+
   box-sizing: border-box;
   background-color: var(--background);
 }

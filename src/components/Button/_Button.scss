@@ -7,7 +7,7 @@
   font-size: 16px;
   justify-content: center;
   padding: 0.5rem 1rem;
-  width: 60%;
+  width: fit-content;;
   cursor: pointer;
   touch-action: manipulation;
   white-space: nowrap;
@@ -16,5 +16,18 @@
 
   &:hover {
     background-color: variables.$accentColor;
+  }
+  &__disable{
+    background-color: grey;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  width: 60%;
+  touch-action: manipulation;
+  white-space: nowrap;
+  margin-top: 20px;
+  align-items: center;
   }
 }

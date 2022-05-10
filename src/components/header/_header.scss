@@ -2,10 +2,11 @@
 
 .header {
   display: grid;
-  grid-template-columns: 0.2fr 1fr 1fr min-content;
+  grid-template-columns: 0.2fr 1fr 1fr 0.1fr;
   justify-content: space-between;
   background-color: var(--primary);
   padding: 20px;
+  width: 80vw;
   box-shadow: 1px 1px 2px 1px #888888;
 
   &__icon-menu {
@@ -26,17 +27,22 @@
     color: yellowgreen;
   }
 
-  &__menu {
+  &__toggle {
     position: absolute;
     background-color: white;
-    list-style: none;
-    height: 100%;
+
     top: 60px;
     padding: 20px;
 
     li {
       padding: 20px;
     }
+  }
+
+  &__badge {
+    background-color: black;
+    font-size: 45px;
+    font-weight: bold;
   }
 
 }

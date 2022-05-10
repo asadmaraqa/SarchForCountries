@@ -1,9 +1,12 @@
 import React, { CSSProperties, useState } from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
 
-import Routes from './Routes'
-import './sass/_main.scss'
 import { useTheme } from './context/theme/themeContext'
 import SearchContext from './context/search/searchContext'
+import Home from './pages/Home'
+import Country from './pages/Country'
+
+import './sass/_main.scss'
 
 export default function App() {
   const { theme } = useTheme()
@@ -12,7 +15,14 @@ export default function App() {
   return (
     <SearchContext.Provider value={{ input, onChange: setInput }}>
       <div style={{ ...(theme as CSSProperties) }}>
-        <Routes />
+        <BrowserRouter>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/country/:countryName">
+            <Country />
+          </Route>
+        </BrowserRouter>
       </div>
     </SearchContext.Provider>
   )

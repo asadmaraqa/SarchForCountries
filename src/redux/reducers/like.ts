@@ -1,5 +1,3 @@
-//under work never midn here
-
 import {
   AddCountryAction,
   ADD_COUNTRY,
@@ -7,6 +5,7 @@ import {
   RemoveCountryAction,
   RREMOVE_COUNTRY,
 } from '../../globalTypes'
+
 let initialLike: [] = []
 const initState: LikeinitState = {
   like: initialLike,
@@ -23,6 +22,7 @@ export default function like(
       ...state,
       like: [...state.like, addedCountry],
     }
+
   case RREMOVE_COUNTRY:
     const removedCountry = action.payload
     const filteredLike = state.like.filter(
