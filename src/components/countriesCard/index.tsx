@@ -25,7 +25,6 @@ const CountriesCard = () => {
     setSearchedCountries(search_resualt)
   }, [input, countries])
   const dispatch = useDispatch()
-
   useEffect(() => {
     dispatch(fetchCountriesApi())
   }, [dispatch])

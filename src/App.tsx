@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import { useTheme } from './context/theme/themeContext'
 import SearchContext from './context/search/searchContext'
+
 import Home from './pages/Home'
 import Country from './pages/Country'
 

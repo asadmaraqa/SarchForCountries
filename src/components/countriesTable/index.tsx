@@ -29,6 +29,7 @@ const CountriesTable = () => {
   useEffect(() => {
     dispatch(fetchCountriesApi())
   }, [dispatch])
+  const test: any = likedCountry.map((country: any) => country.name.common)
 
   return (
     <table className="table">
@@ -50,7 +51,6 @@ const CountriesTable = () => {
               />
               <td>{country.name.common}</td>
               <td>
-                {' '}
                 {country.languages &&
                   Object.values(country.languages).map((lang: any) => (
                     <ul key={lang}>
@@ -61,8 +61,7 @@ const CountriesTable = () => {
               <td>{numberWithSpaces(country.population)}</td>
               <td>{country.region}</td>
               <td>
-                {' '}
-                {likedCountry.includes(country) ? (
+                {test.includes(country.name.common) ? (
                   <Button title={'LIKED'} disable={true} />
                 ) : (
                   <Button
