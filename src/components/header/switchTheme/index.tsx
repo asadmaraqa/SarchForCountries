@@ -22,7 +22,7 @@ const SwitchTheme = ({ onClick }: { onClick: () => void }) => {
           <button onClick={() => setCurrentTheme('green')}>Green</button>
         </li>
         <li>
-          <button onClick={() => setCurrentTheme('original')}>Original</button>
+          <button onClick={() => setCurrentTheme('original')}>Purple</button>
         </li>
       </ul>
     </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -6,8 +6,8 @@ import '../../sass/_main.scss'
 import SearchContext from '../../context/search/searchContext'
 
 const SearchBar = () => {
-  const { onChange } = useContext(SearchContext)
-  const [input, setInput] = useState('')
+  const { onChange, input } = useContext(SearchContext)
+
   return (
     <div className="searchBar">
       <input
@@ -15,7 +15,6 @@ const SearchBar = () => {
         placeholder="search countries"
         value={input}
         onChange={(e) => {
-          setInput(e.target.value)
           onChange(e.target.value)
         }}
       />
