@@ -2,9 +2,9 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import CountryInformation from '../components/countryInformation'
+import CountryInformation from '../components/CountryInformation'
 
-import Header from '../components/header'
+import Header from '../components/Header'
 import { AppState } from '../globalTypes'
 
 import '../sass/_main.scss'

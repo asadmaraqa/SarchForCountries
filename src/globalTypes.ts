@@ -17,7 +17,7 @@ export type CardData = {
   population: string
   languages: []
   onClick: Function
-  buttonStatus: any
+  buttonStatus: boolean
 }
 
 export type CountryInfoData = {

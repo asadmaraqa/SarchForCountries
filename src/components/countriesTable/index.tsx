@@ -4,7 +4,7 @@ import SearchContext from '../../context/search/searchContext'
 import { AppState, CardData } from '../../globalTypes'
 import { numberWithSpaces } from '../../helper/numberWithSpaces'
 import { addCountry, fetchCountriesApi } from '../../redux/actions'
-import Button from '../button'
+import Button from '../Button'
 
 const CountriesTable = () => {
   const loading = useSelector((state: AppState) => state.country.isLoading)
@@ -29,7 +29,9 @@ const CountriesTable = () => {
   useEffect(() => {
     dispatch(fetchCountriesApi())
   }, [dispatch])
-  const test: any = likedCountry.map((country: any) => country.name.common)
+  const isLiked: string[] = likedCountry.map(
+    (country: any) => country.name.common
+  )
 
   return (
     <table className="table">
@@ -61,7 +63,7 @@ const CountriesTable = () => {
               <td>{numberWithSpaces(country.population)}</td>
               <td>{country.region}</td>
               <td>
-                {test.includes(country.name.common) ? (
+                {isLiked.includes(country.name.common) ? (
                   <Button title={'LIKED'} disable={true} />
                 ) : (
                   <Button

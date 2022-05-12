@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchCountriesApi, addCountry } from '../../redux/actions'
-import Card from './card'
+import Card from './Card'
 import SearchContext from '../../context/search/searchContext'
 import { AppState, CardData } from '../../globalTypes'
 

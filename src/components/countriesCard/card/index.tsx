@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { AppState, CardData } from '../../../globalTypes'
-import Button from '../../button'
+import Button from '../../Button'
 import { numberWithSpaces } from '../../../helper/numberWithSpaces'
 import { useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -16,12 +16,11 @@ const Card = ({
   buttonStatus,
 }: CardData) => {
   const history = useHistory()
-
   const likedCountry: any = useSelector((state: AppState) => state.like.like)
-
-  const LikedButton: [{}] = likedCountry.map(
+  const likedButton: string[] = likedCountry.map(
     (country: CardData) => country.name.common
   )
+  const isDisabled = likedButton.includes(name.common)
 
   return (
     <>
@@ -29,11 +28,11 @@ const Card = ({
         <div>
           <img src={flags.png} alt={name.common} className="card__image" />
           <h2 className="card__name">{name.common}</h2>
-          {LikedButton.includes(name.common) ? (
-            <Button title={'LIKED'} disable={true} />
-          ) : (
-            <Button title={'LIKE'} onClick={() => onClick()} />
-          )}
+          <Button
+            title={isDisabled ? 'LIKED' : 'LIKE'}
+            disable={isDisabled}
+            onClick={isDisabled ? () => null : onClick}
+          />
         </div>
         <div className="card_content">
           <h3 className="card__language">Region: </h3>

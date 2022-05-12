@@ -5,9 +5,9 @@ import { faHeart, faBars } from '@fortawesome/free-solid-svg-icons'
 
 import SearchBar from '../SearchBar'
 import '../../sass/_main.scss'
-import SwitchTheme from './switchTheme'
+import SwitchTheme from './SwitchTheme'
 import { AppState } from '../../globalTypes'
-import Like from '../like/Like'
+import Like from '../Like'
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
@@ -36,13 +36,7 @@ const Header = () => {
         <span className="fa-layers-counter header__badge">{like.length}</span>
         {toggleLike ? <Like onClick={likeHandler} /> : ''}
       </span>
-      {toggleMenu ? (
-        <>
-          <SwitchTheme onClick={menuHandler} />
-        </>
-      ) : (
-        ''
-      )}
+      {toggleMenu && <SwitchTheme onClick={menuHandler} />}
     </header>
   )
 }

@@ -31,7 +31,7 @@ export default function like(
 
     return {
       ...state,
-      like: [...filteredLike],
+      like: filteredLike,
     }
   default:
     return state

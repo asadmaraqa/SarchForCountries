@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import { CountryInfoData } from '../../globalTypes'
 import { numberWithSpaces } from '../../helper/numberWithSpaces'
-import Button from '../button'
+import Button from '../Button'
 
 const CountryInformation = ({
   name,
