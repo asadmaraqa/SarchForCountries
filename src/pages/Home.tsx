@@ -12,14 +12,17 @@ const Home = () => {
   }) {
     setShowContent(event.target.value)
   }
-  console.log(showContent)
+
   return (
     <div className="page">
       <Header />
-      <select onChange={handleSelectChange} value={showContent}>
-        <option value="card">Cards</option>
-        <option value="table">Table</option>
-      </select>
+      <span>
+        view:
+        <select onChange={handleSelectChange} value={showContent}>
+          <option value="card">Cards</option>
+          <option value="table">Table</option>
+        </select>
+      </span>
       {showContent === 'card' ? <CountriesCard /> : <CountriesTable />}
     </div>
   )

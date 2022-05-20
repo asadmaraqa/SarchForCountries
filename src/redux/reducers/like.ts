@@ -16,14 +16,15 @@ export default function like(
   action: AddCountryAction | RemoveCountryAction
 ) {
   switch (action.type) {
-  case ADD_COUNTRY:
+  case ADD_COUNTRY: {
     const addedCountry = action.payload
     return {
       ...state,
       like: [...state.like, addedCountry],
     }
+  }
 
-  case RREMOVE_COUNTRY:
+  case RREMOVE_COUNTRY: {
     const removedCountry = action.payload
     const filteredLike = state.like.filter(
       (country) => country !== removedCountry
@@ -33,6 +34,7 @@ export default function like(
       ...state,
       like: filteredLike,
     }
+  }
   default:
     return state
   }

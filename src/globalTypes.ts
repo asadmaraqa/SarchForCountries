@@ -28,6 +28,8 @@ export type CountryInfoData = {
   languages: []
   capital: string
   maps: { googleMaps: string }
+  onClick: Function
+  buttonStatus: boolean
 }
 
 export type LikeData = {
