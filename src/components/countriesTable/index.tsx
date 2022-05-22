@@ -175,7 +175,7 @@ const CountriesTable = () => {
           </tr>
           {!loading &&
             paginatedCountires.map((country: CardData) => (
-              <tr>
+              <tr key={country.name.common}>
                 <img
                   src={country.flags.png}
                   alt={country.name.common}

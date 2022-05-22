@@ -13,10 +13,10 @@ const SwitchTheme = ({ onClick }: { onClick: () => void }) => {
       <FontAwesomeIcon icon={faX} size="1x" onClick={onClick} />
       <ul>
         <li>
-          <button onClick={() => setCurrentTheme('blue')}>blue</button>
+          <button onClick={() => setCurrentTheme('blue')}>Blue</button>
         </li>
         <li>
-          <button onClick={() => setCurrentTheme('red')}>RED</button>
+          <button onClick={() => setCurrentTheme('red')}>Red</button>
         </li>
         <li>
           <button onClick={() => setCurrentTheme('green')}>Green</button>
