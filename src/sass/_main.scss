@@ -1,10 +1,10 @@
 @use "./base";
 @use "./variables";
-@use "../components/header/header";
+@use "../components/Header/Header";
 @use "../components/SearchBar/SearchBar";
-@use "../components/countriesCard/_countriesCard";
-@use "../components/button/Button";
-@use "../../src/components/countriesCard/card/card";
-@use "../../src/components/like/like";
-@use "../components/countryInformation/CountryInformation";
-@use "../components/countriesTable/countriesTable"
+@use "../components/CountriesCard/_countriesCard";
+@use "../components/Button/Button";
+@use "../../src/components/CountriesCard/Card/card";
+@use "../../src/components/Like/like";
+@use "../components/CountryInformation/CountryInformation";
+@use "../components/CountriesTable/CountriesTable"
