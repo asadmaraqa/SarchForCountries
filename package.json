@@ -56,7 +56,8 @@
   "devDependencies": {
     "@types/react": "^16.9.35",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.7"
+    "lint-staged": "^10.0.7",
+    "webpack": "^5.73.0"
   },
   "husky": {
     "hooks": {

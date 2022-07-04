@@ -5,6 +5,7 @@ import CountriesCard from '../components/CountriesCard'
 import CountriesTable from '../components/CountriesTable'
 
 import '../sass/_main.scss'
+
 const Home = () => {
   const [showContent, setShowContent] = useState('card')
   function handleSelectChange(event: {
