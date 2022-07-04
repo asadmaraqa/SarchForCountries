@@ -1,6 +1,6 @@
 name: CI/CD workflow
 
-on: [push,pull_request]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
 
       - name: Checkout the source code
         uses: actions/checkout@v3
-        
+
       - name: Setup cache
       uses: action/cache@v3
       with:
