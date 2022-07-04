@@ -9,6 +9,7 @@ import makeStore from './redux/store'
 import { ThemeProvider } from './context/theme/themeContext'
 
 const store = makeStore()
+console.log(process.env.NODE_ENV)
 
 const WithProvider = () => (
   <Provider store={store}>
