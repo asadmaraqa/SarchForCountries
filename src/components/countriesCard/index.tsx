@@ -15,9 +15,9 @@ import {
 import TablePagination from '@material-ui/core/TablePagination'
 
 import { fetchCountriesApi, addCountry } from '../../redux/actions'
-import Card from './Card'
 import SearchContext from '../../context/search/searchContext'
 import { AppState, CardData } from '../../globalTypes'
+import Card from './Card'
 
 const useStyles1 = makeStyles((theme: Theme) =>
   createStyles({
