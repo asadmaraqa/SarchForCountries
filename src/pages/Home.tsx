@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import Header from '../components/Header'
 import CountriesCard from '../components/CountriesCard'
 import '../sass/_main.scss'
 import CountriesTable from '../components/CountriesTable'
+import Header from '../components/Header'
 
 const Home = () => {
   const [showContent, setShowContent] = useState('card')

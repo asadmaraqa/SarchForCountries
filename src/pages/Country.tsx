@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 
 import CountryInformation from '../components/CountryInformation'
 import Header from '../components/Header'
+
 import { AppState } from '../globalTypes'
 import { addCountry } from '../redux/actions'
 
