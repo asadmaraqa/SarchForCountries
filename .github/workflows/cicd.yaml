@@ -5,38 +5,38 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-
-      - name: Checkout the source code
-        uses: actions/checkout@v3
-
-      - name: Setup cache
-      uses: action/cache@v3
+  steps:
+    - name: Install node
+      uses: actions/setup-node@v3
       with:
-        key: ${{ runner.os }}-something-${{ hashFiles('**/package-lock.json')}}
-        path: ~/.npm
-        restore-keys: |
-        {{ runner.os }}-something
-        ${{ runner.os }}-
+        node-version: 16.x
 
-      - name: Install packages
-      run: npm install
+    - name: Checkout the source code
+      uses: actions/checkout@v3
 
-      - name: Running linting
-        run: npm run lint
+    - name: Setup cache
+    uses: action/cache@v3
+    with:
+      key: ${{ runner.os }}-something-${{ hashFiles('**/package-lock.json')}}
+      path: ~/.npm
+      restore-keys: |
+      {{ runner.os }}-something
+      ${{ runner.os }}-
 
-      - name: Building
-      run: npm run build
+    - name: Install packages
+    run: npm install
 
-      - name: Deploy to Netlify
-      uses: netlify/actions/cli@master
-      env:
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
-      with: 
-        args: deploy --dir=build --prod
+    - name: Running linting
+      run: npm run lint
+
+    - name: Building
+    run: npm run build
+
+    - name: Deploy to Netlify
+    uses: netlify/actions/cli@master
+    env:
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+    with: 
+      args: deploy --dir=build --prod
         
