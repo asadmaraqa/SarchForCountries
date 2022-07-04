@@ -2,7 +2,7 @@
 @use "./variables";
 @use "../components/Header/header";
 @use "../components/SearchBar/searchBar";
-@use "../components/CountriesCard/_countriesCard";
+@use "../components/CountriesCard/countriesCard";
 @use "../components/Button/button";
 @use "../../src/components/countriesCard/Card/card";
 @use "../../src/components/Like/like";
