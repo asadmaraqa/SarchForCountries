@@ -1,6 +1,14 @@
+# Frontend-Typescript-Project "Discover a country"
+
 This website helps you search all the countries in the world and also like countries of your choice. I built this project as a part of the training programme provided by the Integrify Academy.
+In this project I learned, how to use Redux and fetch data to display it in a nice organized way for the user.
 
-To make this project happen, I used:
-1.React 2.Typescript 3.SASS
+## Used technologies
 
-You can view the project through this link: https://superb-heliotrope-b4f67b.netlify.app
+- React 
+- Typescript 
+- SASS
+- Redux
+- Restcountries API
+
+Latest version is deployed at https://superb-heliotrope-b4f67b.netlify.app
